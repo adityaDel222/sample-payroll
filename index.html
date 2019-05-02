@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <title>Paper Jack Solutions | Administrator | Home</title>
+  <style type="text/css">
+   .login_form {
+    margin-top: 3em;
+    margin-left: 3em;
+    border: 0.2em dotted #6fdc6f;
+    padding: 5em;
+    font-family: Copperplate Gothic;
+    box-shadow: 0px 0px 10px 0px green;
+   }
+   .login_form td {
+    padding: 10px;
+   }
+   .login_button {
+    border: 0em;
+    background-color: #6fdc6f;
+    padding: 1em;
+    font-family: Copperplate Gothic;
+   }
+   .admin_login {
+    margin-left: 7.3em;
+    font-family: Segoe UI Light;
+    color: green;
+    text-shadow: 2px 2px 1px #6fdc6f;
+   }
+  </style>
+  <script type="text/javascript">
+   function auth_login() {
+    var def_user = "user";
+    var def_pass = "pass";
+    var submit_user = document.forms["login"]["uname"].value;
+    var submit_pass = document.forms["login"]["pword"].value;
+    if (def_user == submit_user && def_pass == submit_pass) {
+     return true;
+    }
+    else {
+     alert("Username or password did not match. Please try again.");
+     document.forms["login"]["uname"].value = "";
+     document.forms["login"]["pword"].value = "";
+     return false;
+    }
+   }
+  </script>
+ </head>
+ <body>
+  <div class="header_nav">
+   <div class="header">
+    <p class="head"><span style="font-family: imprint mt shadow; font-size: 1.75em">p</span>aper&nbsp;&nbsp;<span style="font-family: imprint mt shadow; font-size: 1.75em">j</span>ack&nbsp;&nbsp;solutions</p>
+    <img src="Logo.jpg" class="img_logo" />
+   </div>
+   <div class="nav">
+    <!--<a class="signup" href="index.html" onclick="alert('Not Allowed.')">Sign Up</a>
+    <a class="login" href="index.html">Log In</a>-->
+   </div>
+  </div>
+  <div class="content">
+   <h2 class="admin_login">Administrative Login</h2>
+   <form name="login" action="home.html" onsubmit="return auth_login()" method="post">
+    <table id="here" class="login_form">
+     <tr>
+      <td>Username:</td>
+      <td><input type="text" name="uname" required /></td>
+     </tr>
+     <tr>
+      <td>Password:</td>
+      <td><input type="password" name="pword" required /></td>
+     </tr>
+      <tr>
+      <td colspan=2><input type="submit" name="submit" value="Login" class="login_button"></td>
+     </tr>
+    </table>
+   </form>
+  </div>
+ </body>
+</html>
